@@ -2,7 +2,7 @@ pipeline {
     agent {label 'node1'}
     environment{
         ARCHIVE_NAME="${env.BUILD_TAG}.tar.gz"
-        BUCKET_NAME ="flask-app-proj"
+        BUCKET_NAME ="s3://flask-app-proj"
     }
 
     stages {
