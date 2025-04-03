@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                sh '''
+                ls 
+                '''
             }
         }
         stage('Upload Artifact') {
