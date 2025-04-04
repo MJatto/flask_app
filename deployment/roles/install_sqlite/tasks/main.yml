@@ -3,12 +3,12 @@
 
 - name: Install SQLite for Ubuntu
   apt: 
-    name: sqlite
+    name: sqlite3
     state: present
   when: ansible_distribution == "Ubuntu"
 
 - name: Install SQLite for Amazon & Centos
   yum: 
-    name: sqlite
+    name: sqlite3
     state: present
   when: ansible_distribution == "Amazon" or ansible_distribution == "Centos"
