@@ -12,7 +12,7 @@
       [Service]
       WorkingDirectory = /opt/flask-app
       Environment="PATH=/opt/flask-app/venv/bin"
-      ExecStart=/bin/bash -c "source /opt/flask-app/venv/bin/activate && exec python app.py"
+      ExecStart=/opt/flask-app/venv/bin/python3 /opt/flask-app/app.py
       Restart = always
 
       StandardOutput = append:/var/log/flask-app.log
