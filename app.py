@@ -22,9 +22,9 @@ def get_messages():
 
 @app.route("/")
 def home():
+    init_db()
     messages = get_messages()
     return render_template("index.html", messages=messages)
 
 if __name__ == "__main__":
-    init_db()
     app.run(host='0.0.0.0', port=5000,debug=True)
