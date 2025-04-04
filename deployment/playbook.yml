@@ -2,7 +2,7 @@
   hosts: ubuntu,redhat, centos
   become: true
   roles:
-    - install _python
+    - install_python
     - install_sqlite
     - install_flask
     - copy_app
