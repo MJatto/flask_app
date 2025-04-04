@@ -34,8 +34,8 @@ pipeline {
             steps {
                 sh '''
                 cd deployment
-                
-                ansible-playbook -i aws_ec2.yml  playbook.yml
+
+                ansible-playbook -i aws_ec2.yml  playbook.yml -e "ARCHIVE_NAME=${ARCHIVE_NAME} BUCKET_NAME=flask-app-proj"
                 '''
             }
         }

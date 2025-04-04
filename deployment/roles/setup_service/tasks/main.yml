@@ -23,6 +23,6 @@
 - name: Reload System and Start FLask App
   systemd:
     daemon_reload: yes
-    name: /opt/flask-app
+    name: flask-app
     state: restarted
     enabled: yes 
