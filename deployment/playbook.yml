@@ -1,5 +1,5 @@
 - name: App Deployment
-  hosts: ubuntu,redhat, centos
+  hosts: ubuntu,amazon,centos
   become: true
   roles:
     - install_python
