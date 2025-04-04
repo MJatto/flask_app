@@ -3,7 +3,7 @@
 
 - name: Install Flask App
   apt:
-    name: python3-pip-flask
+    name: python3-flask
     state: present
   when: ansible_distribution == 'Ubuntu'
 
