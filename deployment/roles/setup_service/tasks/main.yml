@@ -1,0 +1,28 @@
+- include-role:
+  name: copy_app
+
+- name: Setup Services
+  copy:
+    dest: /etc/systemd/system/flask-app.service
+    content: |
+      [Unit]
+      Description = Flask App
+      After = network.target
+
+      [Service]
+      WorkingDirectory = /opt/flask-app
+      ExecStart = /opt/flask-app/venv/bin/python3 /opt/flask-app/app.py
+      Restart = always
+
+      StandardOutput = append:/var/log/flask-app.log
+      StandardError = append:/var/log/flask-error.log
+
+      [Install]
+      WantedBy = multi_user.target
+
+- name: Reload System and Start FLask App
+  systemd:
+    daemon_reload: yes
+    name: /opt/flask-app
+    state: restarted
+    enabled: yes 

@@ -1,0 +1,7 @@
+- include_role:
+  name: install_python
+
+- name: Install Flask App
+  pip:
+    name: flask
+    state: present

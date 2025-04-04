@@ -1,0 +1,24 @@
+- name: Get Artifact from S3 
+  amazon.aws.s3_object:
+    bucket: '{{BUCKET_NAME}}'
+    object: '{{ARCHIVE_NAME}}'
+    dest: /tmp/{{ARCHIVE_NAME}}
+    mode: get
+  delegate_to: localhost
+  become: false
+
+- name: Create Dynamic Inventory
+  file:
+    path: /opt/flask-app
+    state: directory
+
+- name: Copy Artifact
+  copy:
+    src: /tmp/{{ARCHIVE_NAME}}
+    dest: /opt/flask-app/app.tar.gz
+
+- name: Unzip Artifact
+  unarchive:
+    src: /opt/flask-app/app.tar.gz
+    dest: /opt/flask-app
+    remote_src: yes 

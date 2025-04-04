@@ -1,0 +1,14 @@
+- include-role:
+  name: cache_update
+
+- name: Install SQLite for Ubuntu
+  apt: 
+    name: sqlite
+    state: present
+  when: ansible_distribution == "Ubuntu"
+
+- name: Install SQLite for Amazon & Centos
+  yum: 
+    name: sqlite
+    state: present
+  when: ansible_distribution == "Amazon" or ansible_distribution == "Centos"
