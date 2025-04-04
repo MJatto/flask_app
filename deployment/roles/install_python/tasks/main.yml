@@ -3,12 +3,16 @@
 
 - name: Install Python for Ubuntu
   apt: 
-    name: python3
+    name: 
+      - python3
+      - python3-pip
     state: present
   when: ansible_distribution == "Ubuntu"
 
 - name: Install Python for Amazon & Centos
   yum: 
-    name: python3
+    name: 
+      - python3
+      - python3-pip
     state: present
   when: ansible_distribution == "Amazon" or ansible_distribution == "Centos"
