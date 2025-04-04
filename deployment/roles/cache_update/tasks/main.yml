@@ -3,8 +3,8 @@
     cache_update: yes
   when: ansible_distribution == "Ubuntu"
 
-  - name: Update Yum Cache (Other OS)
-  Yum:
+- name: Update Yum Cache (Other OS)
+  yum:
     cache_update: yes
   when: ansible_distribution == "Centos" or ansible_distribution == "Amazon"
   
