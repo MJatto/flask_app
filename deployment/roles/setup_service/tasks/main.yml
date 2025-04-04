@@ -1,4 +1,4 @@
-- include-role:
+- include_role:
   name: copy_app
 
 - name: Setup Services
