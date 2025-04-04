@@ -1,6 +1,17 @@
 - include_role:
     name: copy_app
 
+- name: Ensure virtual environment exists
+  command: python3 -m venv /opt/flask-app/venv
+  args:
+    creates: /opt/flask-app/venv/bin/activate
+
+- name: Install dependencies in the virtual environment
+  pip:
+    requirements: /opt/flask-app/requirements.txt
+    virtualenv: /opt/flask-app/venv
+    virtualenv_python: python3
+
 - name: Setup Services
   copy:
     dest: /etc/systemd/system/flask-app.service
@@ -26,4 +37,4 @@
     daemon_reload: yes
     name: flask-app
     state: restarted
-    enabled: yes 
+    enabled: yes
