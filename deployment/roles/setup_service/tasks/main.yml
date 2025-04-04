@@ -10,7 +10,7 @@
   pip:
     requirements: /opt/flask-app/requirements.txt
     virtualenv: /opt/flask-app/venv
-    virtualenv_python: python3
+    virtualenv_python: python3-pip
 
 - name: Setup Services
   copy:
