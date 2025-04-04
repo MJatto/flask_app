@@ -1,21 +1,14 @@
 - include_role:
     name: install_python
 
-- name: Install pip3
-  package:
-    name: python3-pip
+- name: Install Flask App
+  apt:
+    name: flask
     state: present
+  when: ansible_distribution == 'Ubuntu'
 
 - name: Install Flask App
-  pip:
-    name: flask
-    #state: present
-    executable: pip3
-  #when: ansible_distribution == 'Ubuntu'
-
-#- name: Install Flask App
- # pip:
-  #  name: python3-flask
-   # state: present
-    #executable: pip3
-  #when: ansible_distribution == 'Amazon' or ansible_distribution == 'Centos'
+  yum:
+    name: python3-flask
+    state: present
+  when: ansible_distribution == 'Amazon' or ansible_distribution == 'Centos'
