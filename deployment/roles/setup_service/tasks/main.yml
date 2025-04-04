@@ -11,7 +11,7 @@
 
       [Service]
       WorkingDirectory = /opt/flask-app
-      ExecStart = /opt/flask-app/venv/bin/python /opt/flask-app/app.py
+      ExecStart = /opt/flask-app/venv/bin/python app.py
       Restart = always
 
       StandardOutput = append:/var/log/flask-app.log
