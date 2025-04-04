@@ -5,10 +5,12 @@
   apt:
     name: python3-flask
     state: present
+    executable: pip3
   when: ansible_distribution == 'Ubuntu'
 
 - name: Install Flask App
   yum:
     name: python3-flask
     state: present
+    executable: pip3
   when: ansible_distribution == 'Amazon' or ansible_distribution == 'Centos'
