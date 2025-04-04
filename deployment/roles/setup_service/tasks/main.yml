@@ -1,5 +1,5 @@
 - include_role:
-  name: copy_app
+    name: copy_app
 
 - name: Setup Services
   copy:
