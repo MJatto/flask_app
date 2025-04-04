@@ -5,6 +5,6 @@ hostnames:
   - ip-address
 
 groups:
-  ubuntu: "'ubuntu' in tag.OS"
-  amazon: "'amazon' in tag.OS"
-  centos: "'centos' in tag.OS"
+  ubuntu: "'ubuntu' in tags.OS"
+  amazon: "'amazon' in tags.OS"
+  centos: "'centos' in tags.OS"
