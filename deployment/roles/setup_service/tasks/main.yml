@@ -11,6 +11,7 @@
 
       [Service]
       WorkingDirectory = /opt/flask-app
+      Environment="PATH=/opt/flask-app/venv/bin"
       ExecStart = /opt/flask-app/venv/bin/python app.py
       Restart = always
 
