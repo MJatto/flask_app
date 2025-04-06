@@ -7,8 +7,14 @@
     state: present
   when: ansible_distribution == "Ubuntu"
 
-- name: Install SQLite for Amazon & Centos
+- name: Install SQLite for Centos
   yum: 
     name: sqlite3
     state: present
-  when: ansible_distribution == "Amazon" or ansible_distribution == "Centos"
+  when: ansible_distribution == "Centos"
+
+- name: Install SQLite (Amazon)
+  dnf:
+    name: sqlite
+    state: present
+  when: ansible_distribution == "Amazon"
